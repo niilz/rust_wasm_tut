@@ -1,0 +1,771 @@
+Oct 09 16:26:22.020 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0308]: mismatched types
+  --> src/lib.rs:15:11
+   |
+15 |     alert(format!("Hello, {}", name));
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |           |
+   |           expected &str, found struct `std::string::String`
+   |           help: consider borrowing here: `&format!("Hello, {}", name)`
+   |
+   = note: expected type `&str`
+              found type `std::string::String`
+   = note: this error originates in a macro outside of the current crate (in Nightly builds, run with -Z external-macro-backtrace for more info)
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 16:27:41.376 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0308]: mismatched types
+  --> src/lib.rs:15:11
+   |
+15 |     alert(["Hello,", name].join(" "));
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |           |
+   |           expected &str, found struct `std::string::String`
+   |           help: consider borrowing here: `&["Hello,", name].join(" ")`
+   |
+   = note: expected type `&str`
+              found type `std::string::String`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 16:29:08.200 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error: incorrect close delimiter: `}`
+  --> src/lib.rs:16:1
+   |
+14 | pub fn greet(name: &str) {
+   |                          - close delimiter possibly meant for this
+15 |     alert(&format("Hello, {}!", name);
+   |          - un-closed delimiter
+16 | }
+   | ^ incorrect close delimiter
+
+error: expected one of `)`, `,`, `.`, `?`, or an operator, found `;`
+  --> src/lib.rs:15:38
+   |
+15 |     alert(&format("Hello, {}!", name);
+   |                                      ^ expected one of `)`, `,`, `.`, `?`, or an operator here
+
+error: expected expression, found `)`
+  --> src/lib.rs:16:1
+   |
+16 | }
+   | ^ expected expression
+
+error[E0423]: expected function, found macro `format`
+help: possible better candidate is found in another module, you can import it into scope
+  |
+6 | use std::fmt::format;
+  |
+
+error: aborting due to 4 previous errors
+
+For more information about this error, try `rustc --explain E0423`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 16:29:18.848 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0423]: expected function, found macro `format`
+  --> src/lib.rs:15:12
+   |
+15 |     alert(&format("Hello, {}!", name));
+   |            ^^^^^^ did you mean `format!(...)`?
+help: possible better candidate is found in another module, you can import it into scope
+   |
+6  | use std::fmt::format;
+   |
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0423`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 17:28:37.581 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error: unexpected close delimiter: `}`
+  --> src/lib.rs:96:1
+   |
+96 | }
+   | ^ unexpected close delimiter
+
+error: aborting due to previous error
+
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 17:29:18.625 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error: expected one of `:` or `@`, found `self`
+  --> src/lib.rs:24:22
+   |
+24 |     pub fn tick(&mus self) {
+   |                      ^^^^ expected one of `:` or `@` here
+
+error: expected type, found `32`
+  --> src/lib.rs:55:40
+   |
+55 |     fn live_neighbor_count(&self, row: 32, column: u32) -> u8 {
+   |                                        ^^
+
+error[E0433]: failed to resolve. Use of undeclared type or module `Universe`
+  --> src/lib.rs:22:1
+   |
+22 | #[wasm_bindgen]
+   | ^^^^^^^^^^^^^^^ Use of undeclared type or module `Universe`
+
+error[E0412]: cannot find type `Universe` in this scope
+
+error[E0422]: cannot find struct, variant or union type `Universe` in this scope
+
+error[E0412]: cannot find type `Universe` in this scope
+  --> src/lib.rs:22:1
+   |
+22 | #[wasm_bindgen]
+   | ^^^^^^^^^^^^^^^ did you mean `Univers`?
+
+error[E0412]: cannot find type `Universe` in this scope
+   --> src/lib.rs:100:23
+    |
+100 | impl fmt::Display for Universe {
+    |                       ^^^^^^^^ did you mean `Univers`?
+
+error: aborting due to 7 previous errors
+
+Some errors occurred: E0412, E0422, E0433.
+For more information about an error, try `rustc --explain E0412`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 17:29:37.574 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error: expected one of `:` or `@`, found `self`
+  --> src/lib.rs:24:22
+   |
+24 |     pub fn tick(&mus self) {
+   |                      ^^^^ expected one of `:` or `@` here
+
+error: expected type, found `32`
+  --> src/lib.rs:55:40
+   |
+55 |     fn live_neighbor_count(&self, row: 32, column: u32) -> u8 {
+   |                                        ^^
+
+error: aborting due to 2 previous errors
+
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 17:29:54.290 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error: expected one of `:` or `@`, found `self`
+  --> src/lib.rs:24:22
+   |
+24 |     pub fn tick(&mus self) {
+   |                      ^^^^ expected one of `:` or `@` here
+
+error[E0425]: cannot find value `neighbor_col` in this scope
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0425`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 17:30:21.116 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0425]: cannot find value `live_neigbors` in this scope
+  --> src/lib.rs:33:46
+   |
+33 |                 let next_cell = match (cell, live_neigbors) {
+   |                                              ^^^^^^^^^^^^^ did you mean `live_neighbors`?
+
+error[E0425]: cannot find value `neighbor_col` in this scope
+  --> src/lib.rs:64:55
+   |
+64 |                 let idx = self.get_index(neigbor_row, neighbor_col);
+   |                                                       ^^^^^^^^^^^^ did you mean `neigbor_col`?
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0425`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 18:34:53.940 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0463]: can't find crate for `fixedbitset`
+ --> src/lib.rs:4:1
+  |
+4 | extern crate fixedbitset;
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^ can't find crate
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0463`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 18:37:14.062 ERRO Compilation of your program failed. stderr:
+
+    Updating crates.io index
+ Downloading fixedbitset v0.1.9
+   Compiling fixedbitset v0.1.9
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0425]: cannot find value `idx` in this scope
+  --> src/lib.rs:54:18
+   |
+54 |         next.set(idx, match next_cell {
+   |                  ^^^ not found in this scope
+
+error[E0425]: cannot find value `next_cell` in this scope
+  --> src/lib.rs:54:29
+   |
+54 |         next.set(idx, match next_cell {
+   |                             ^^^^^^^^^ not found in this scope
+
+error[E0308]: mismatched types
+  --> src/lib.rs:40:22
+   |
+40 |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:22
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:41
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                                         ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:44:22
+   |
+44 |                     (Cell::Alive, x) if x > 3 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:46:22
+   |
+46 |                     (Cell::Dead, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: match arms have incompatible types
+  --> src/lib.rs:38:33
+   |
+38 |                   let next_cell = match (cell, live_neighbors) {
+   |  _________________________________^
+39 | |                     // Rule 1: a cell with less than two live neighbours -> dies
+40 | |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+41 | |                     // Rule 2: a cell with two or three live neighbours -> stays alive
+...  |
+48 | |                     (otherwise, _) => otherwise,
+   | |                                       --------- match arm with an incompatible type
+49 | |                 };
+   | |_________________^ expected enum `Cell`, found bool
+   |
+   = note: expected type `Cell`
+              found type `bool`
+
+error[E0277]: a collection of type `fixedbitset::FixedBitSet` cannot be built from an iterator over elements of type `Cell`
+  --> src/lib.rs:96:18
+   |
+96 |                 .collect();
+   |                  ^^^^^^^ a collection of type `fixedbitset::FixedBitSet` cannot be built from `std::iter::Iterator<Item=Cell>`
+   |
+   = help: the trait `std::iter::FromIterator<Cell>` is not implemented for `fixedbitset::FixedBitSet`
+
+error[E0599]: no method named `as_sclice` found for type `fixedbitset::FixedBitSet` in the current scope
+   --> src/lib.rs:119:20
+    |
+119 |         self.cells.as_sclice().as_ptr();
+    |                    ^^^^^^^^^
+    |
+    = help: did you mean `as_slice`?
+
+error[E0308]: mismatched types
+   --> src/lib.rs:117:40
+    |
+117 |       pub fn cells(&self) -> *const Cell {
+    |  ________________________________________^
+118 | |         // self.cells.as_ptr()
+119 | |         self.cells.as_sclice().as_ptr();
+    | |                                        - help: consider removing this semicolon
+120 | |     }
+    | |_____^ expected *-ptr, found ()
+    |
+    = note: expected type `*const Cell`
+               found type `()`
+
+error[E0308]: mismatched types
+   --> src/lib.rs:130:41
+    |
+130 |                 let symbol = if cell == Cell::Dead { '□' } else { '■' };
+    |                                         ^^^^^^^^^^ expected u32, found enum `Cell`
+    |
+    = note: expected type `u32`
+               found type `Cell`
+
+error: aborting due to 12 previous errors
+
+Some errors occurred: E0277, E0308, E0425, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 18:37:39.370 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0425]: cannot find value `idx` in this scope
+  --> src/lib.rs:54:18
+   |
+54 |         next.set(idx, match next_cell {
+   |                  ^^^ not found in this scope
+
+error[E0425]: cannot find value `next_cell` in this scope
+  --> src/lib.rs:54:29
+   |
+54 |         next.set(idx, match next_cell {
+   |                             ^^^^^^^^^ not found in this scope
+
+error[E0308]: mismatched types
+  --> src/lib.rs:40:22
+   |
+40 |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:22
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:41
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                                         ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:44:22
+   |
+44 |                     (Cell::Alive, x) if x > 3 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:46:22
+   |
+46 |                     (Cell::Dead, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: match arms have incompatible types
+  --> src/lib.rs:38:33
+   |
+38 |                   let next_cell = match (cell, live_neighbors) {
+   |  _________________________________^
+39 | |                     // Rule 1: a cell with less than two live neighbours -> dies
+40 | |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+41 | |                     // Rule 2: a cell with two or three live neighbours -> stays alive
+...  |
+48 | |                     (otherwise, _) => otherwise,
+   | |                                       --------- match arm with an incompatible type
+49 | |                 };
+   | |_________________^ expected enum `Cell`, found bool
+   |
+   = note: expected type `Cell`
+              found type `bool`
+
+error[E0277]: a collection of type `fixedbitset::FixedBitSet` cannot be built from an iterator over elements of type `Cell`
+  --> src/lib.rs:96:18
+   |
+96 |                 .collect();
+   |                  ^^^^^^^ a collection of type `fixedbitset::FixedBitSet` cannot be built from `std::iter::Iterator<Item=Cell>`
+   |
+   = help: the trait `std::iter::FromIterator<Cell>` is not implemented for `fixedbitset::FixedBitSet`
+
+error[E0599]: no method named `as_sclice` found for type `fixedbitset::FixedBitSet` in the current scope
+   --> src/lib.rs:119:20
+    |
+119 |         self.cells.as_sclice().as_ptr();
+    |                    ^^^^^^^^^
+    |
+    = help: did you mean `as_slice`?
+
+error[E0308]: mismatched types
+   --> src/lib.rs:117:40
+    |
+117 |       pub fn cells(&self) -> *const Cell {
+    |  ________________________________________^
+118 | |         // self.cells.as_ptr()
+119 | |         self.cells.as_sclice().as_ptr();
+    | |                                        - help: consider removing this semicolon
+120 | |     }
+    | |_____^ expected *-ptr, found ()
+    |
+    = note: expected type `*const Cell`
+               found type `()`
+
+error[E0308]: mismatched types
+   --> src/lib.rs:130:41
+    |
+130 |                 let symbol = if cell == Cell::Dead { '□' } else { '■' };
+    |                                         ^^^^^^^^^^ expected u32, found enum `Cell`
+    |
+    = note: expected type `u32`
+               found type `Cell`
+
+error: aborting due to 12 previous errors
+
+Some errors occurred: E0277, E0308, E0425, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 18:44:28.783 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0308]: mismatched types
+  --> src/lib.rs:40:22
+   |
+40 |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:22
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:41
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                                         ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:44:22
+   |
+44 |                     (Cell::Alive, x) if x > 3 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:46:22
+   |
+46 |                     (Cell::Dead, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: match arms have incompatible types
+  --> src/lib.rs:38:33
+   |
+38 |                   let next_cell = match (cell, live_neighbors) {
+   |  _________________________________^
+39 | |                     // Rule 1: a cell with less than two live neighbours -> dies
+40 | |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+41 | |                     // Rule 2: a cell with two or three live neighbours -> stays alive
+...  |
+48 | |                     (otherwise, _) => otherwise,
+   | |                                       --------- match arm with an incompatible type
+49 | |                 };
+   | |_________________^ expected enum `Cell`, found bool
+   |
+   = note: expected type `Cell`
+              found type `bool`
+
+error[E0277]: a collection of type `fixedbitset::FixedBitSet` cannot be built from an iterator over elements of type `Cell`
+  --> src/lib.rs:96:18
+   |
+96 |                 .collect();
+   |                  ^^^^^^^ a collection of type `fixedbitset::FixedBitSet` cannot be built from `std::iter::Iterator<Item=Cell>`
+   |
+   = help: the trait `std::iter::FromIterator<Cell>` is not implemented for `fixedbitset::FixedBitSet`
+
+error[E0599]: no method named `as_sclice` found for type `fixedbitset::FixedBitSet` in the current scope
+   --> src/lib.rs:119:20
+    |
+119 |         self.cells.as_sclice().as_ptr();
+    |                    ^^^^^^^^^
+    |
+    = help: did you mean `as_slice`?
+
+error[E0308]: mismatched types
+   --> src/lib.rs:117:40
+    |
+117 |       pub fn cells(&self) -> *const Cell {
+    |  ________________________________________^
+118 | |         // self.cells.as_ptr()
+119 | |         self.cells.as_sclice().as_ptr();
+    | |                                        - help: consider removing this semicolon
+120 | |     }
+    | |_____^ expected *-ptr, found ()
+    |
+    = note: expected type `*const Cell`
+               found type `()`
+
+error[E0308]: mismatched types
+   --> src/lib.rs:130:41
+    |
+130 |                 let symbol = if cell == Cell::Dead { '□' } else { '■' };
+    |                                         ^^^^^^^^^^ expected u32, found enum `Cell`
+    |
+    = note: expected type `u32`
+               found type `Cell`
+
+error: aborting due to 10 previous errors
+
+Some errors occurred: E0277, E0308, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 18:44:34.696 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0308]: mismatched types
+  --> src/lib.rs:40:22
+   |
+40 |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:22
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:42:41
+   |
+42 |                     (Cell::Alive, 2) | (Cell::Alive, 3) => Cell::Alive,
+   |                                         ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:44:22
+   |
+44 |                     (Cell::Alive, x) if x > 3 => Cell::Dead,
+   |                      ^^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: mismatched types
+  --> src/lib.rs:46:22
+   |
+46 |                     (Cell::Dead, 3) => Cell::Alive,
+   |                      ^^^^^^^^^^ expected bool, found enum `Cell`
+   |
+   = note: expected type `bool`
+              found type `Cell`
+
+error[E0308]: match arms have incompatible types
+  --> src/lib.rs:38:33
+   |
+38 |                   let next_cell = match (cell, live_neighbors) {
+   |  _________________________________^
+39 | |                     // Rule 1: a cell with less than two live neighbours -> dies
+40 | |                     (Cell::Alive, x) if x < 2 => Cell::Dead,
+41 | |                     // Rule 2: a cell with two or three live neighbours -> stays alive
+...  |
+48 | |                     (otherwise, _) => otherwise,
+   | |                                       --------- match arm with an incompatible type
+49 | |                 };
+   | |_________________^ expected enum `Cell`, found bool
+   |
+   = note: expected type `Cell`
+              found type `bool`
+
+error[E0277]: a collection of type `fixedbitset::FixedBitSet` cannot be built from an iterator over elements of type `Cell`
+  --> src/lib.rs:96:18
+   |
+96 |                 .collect();
+   |                  ^^^^^^^ a collection of type `fixedbitset::FixedBitSet` cannot be built from `std::iter::Iterator<Item=Cell>`
+   |
+   = help: the trait `std::iter::FromIterator<Cell>` is not implemented for `fixedbitset::FixedBitSet`
+
+error[E0599]: no method named `as_sclice` found for type `fixedbitset::FixedBitSet` in the current scope
+   --> src/lib.rs:119:20
+    |
+119 |         self.cells.as_sclice().as_ptr();
+    |                    ^^^^^^^^^
+    |
+    = help: did you mean `as_slice`?
+
+error[E0308]: mismatched types
+   --> src/lib.rs:117:40
+    |
+117 |       pub fn cells(&self) -> *const Cell {
+    |  ________________________________________^
+118 | |         // self.cells.as_ptr()
+119 | |         self.cells.as_sclice().as_ptr();
+    | |                                        - help: consider removing this semicolon
+120 | |     }
+    | |_____^ expected *-ptr, found ()
+    |
+    = note: expected type `*const Cell`
+               found type `()`
+
+error[E0308]: mismatched types
+   --> src/lib.rs:130:41
+    |
+130 |                 let symbol = if cell == Cell::Dead { '□' } else { '■' };
+    |                                         ^^^^^^^^^^ expected u32, found enum `Cell`
+    |
+    = note: expected type `u32`
+               found type `Cell`
+
+error: aborting due to 10 previous errors
+
+Some errors occurred: E0277, E0308, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
+Oct 09 18:45:34.976 ERRO Compilation of your program failed. stderr:
+
+   Compiling wasm-game-of-life v0.1.0 (/Users/niilz/Documents/ProgrammingNH/Rust/Rust_Wasm_Tut/wasm-game-of-life)
+error[E0425]: cannot find value `next_cell` in this scope
+  --> src/lib.rs:38:37
+   |
+38 |                 next.set(idx, match next_cell {
+   |                                     ^^^^^^^^^ not found in this scope
+
+error[E0277]: a collection of type `fixedbitset::FixedBitSet` cannot be built from an iterator over elements of type `Cell`
+  --> src/lib.rs:98:18
+   |
+98 |                 .collect();
+   |                  ^^^^^^^ a collection of type `fixedbitset::FixedBitSet` cannot be built from `std::iter::Iterator<Item=Cell>`
+   |
+   = help: the trait `std::iter::FromIterator<Cell>` is not implemented for `fixedbitset::FixedBitSet`
+
+error[E0599]: no method named `as_sclice` found for type `fixedbitset::FixedBitSet` in the current scope
+   --> src/lib.rs:121:20
+    |
+121 |         self.cells.as_sclice().as_ptr();
+    |                    ^^^^^^^^^
+    |
+    = help: did you mean `as_slice`?
+
+error[E0308]: mismatched types
+   --> src/lib.rs:119:40
+    |
+119 |       pub fn cells(&self) -> *const Cell {
+    |  ________________________________________^
+120 | |         // self.cells.as_ptr()
+121 | |         self.cells.as_sclice().as_ptr();
+    | |                                        - help: consider removing this semicolon
+122 | |     }
+    | |_____^ expected *-ptr, found ()
+    |
+    = note: expected type `*const Cell`
+               found type `()`
+
+error[E0308]: mismatched types
+   --> src/lib.rs:132:41
+    |
+132 |                 let symbol = if cell == Cell::Dead { '□' } else { '■' };
+    |                                         ^^^^^^^^^^ expected u32, found enum `Cell`
+    |
+    = note: expected type `u32`
+               found type `Cell`
+
+error: aborting due to 5 previous errors
+
+Some errors occurred: E0277, E0308, E0425, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: Could not compile `wasm-game-of-life`.
+
+To learn more, run the command again with --verbose.
+
